@@ -1,5 +1,5 @@
 import sys
-from src import lens_magnifying_glass, lens_properties, lens_projection, concave_lens, lens_camera
+from src import lens_magnifying_glass, lens_properties, lens_projection, concave_lens, lens_camera, task6, task7, task8, task9
 
 if __name__ == "__main__":
     task = sys.argv[1] if len(sys.argv) > 1 else None
@@ -14,5 +14,13 @@ if __name__ == "__main__":
         concave_lens.simulate_concave_mirror()
     elif task == "task5":
         lens_camera.simulate_lens_camera()
+    elif task == "task6":
+        task6.run()
+    elif task == "task7":
+        task7.run()
+    elif task == "task8":
+        task8.run()
+    elif task == "task9":
+        task9.run()
     else:
         print("Specify a valid task (e.g., 'task1')")
