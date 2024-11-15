@@ -37,5 +37,3 @@ def run():
         eye.display(raysList=[rays], onlyPrincipalAndAxialRays=False)
     except ValueError as e:
         print(f"Error during display: {e}")
-
-run()

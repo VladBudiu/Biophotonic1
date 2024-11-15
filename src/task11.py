@@ -74,6 +74,3 @@ def run():
         onlyPrincipalAndAxialRays=False,
         limitObjectToFieldOfView=False,
     )
-
-
-run()
