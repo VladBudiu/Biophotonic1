@@ -68,9 +68,7 @@ def run():
         raysList=[rays],
         onlyPrincipalAndAxialRays=False,
         limitObjectToFieldOfView=False,
-        removeBlocks=True
     )
 
 if __name__ == "__main__":
     run()
-
