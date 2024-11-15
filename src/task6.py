@@ -11,10 +11,12 @@ def run():
     eye = ImagingPath()
     eye.label = "Simplified Human Eye Model"
 
-    # Cornea and eye lens combined
-    eye.append(Lens(f=f_cornea, label="Cornea"))
-    eye.append(Lens(f=f_lens, label="Eye Lens"))
+    # eye.append(Lens(f=f_cornea, label="Cornea"))
+    # eye.append(Lens(f=f_lens, label="Eye Lens"))
 
+    # Cornea and eye lens combined
+    
+    eye.append(Lens(f=1.69, label="Simplify Cornea and Eye Lens"))
     # Space between lens and retina
     eye.append(Space(d=axial_length, label="Vitreous Humor"))
 
