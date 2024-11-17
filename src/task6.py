@@ -11,12 +11,9 @@ def run():
     eye = ImagingPath()
     eye.label = "Simplified Human Eye Model"
 
-    # eye.append(Lens(f=f_cornea, label="Cornea"))
-    # eye.append(Lens(f=f_lens, label="Eye Lens"))
-
     # Cornea and eye lens combined
-    
     eye.append(Lens(f=1.69, label="Simplify Cornea and Eye Lens"))
+   
     # Space between lens and retina
     eye.append(Space(d=axial_length, label="Vitreous Humor"))
 
@@ -25,16 +22,15 @@ def run():
 
     # Set the object at infinity
     eye.objectPosition = float('inf')
-    eye.objectHeight = 2.0  # Set a finite object height
+    eye.objectHeight = 2.0  # 
 
     # Define rays coming from infinity (parallel rays)
     rays = ObjectRays(
-        diameter=2.0,    # Simulate rays entering the eye across the pupil
-        halfAngle=0.0,   # Parallel rays
-        z=0.0            # Start at z=0.0
+        diameter=2.0,    
+        halfAngle=0.0,   
     )
 
-    # Check for sharp image formation
+   
     imageDistance, conjugateMatrix = eye.forwardConjugate()
     opticalLength = eye.L
 

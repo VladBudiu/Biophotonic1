@@ -7,24 +7,23 @@ def run():
     object_distance = 20  # Object distance set to infinity to represent a far object (simulate myopia)
     
     # Step 1: Set the focal length of the eye's natural lens system to simulate myopia
-    # Myopic eyes have a focal length that is too short, causing excessive convergence
-    myopic_focal_length = 1.7  # Shorter focal length in cm to simulate myopia
+    myopic_focal_length = 1.7 
 
     # Create the myopic eye model without corrective glasses
     eye = ImagingPath()
     eye.label = "Myopic Human Eye Model - Elongated Eyeball"
-    eye.append(Space(object_distance))  # Space before the lens
-    eye.append(Lens(f=myopic_focal_length, label="Effective Cornea and Lens (Myopic)"))  # Myopic cornea and lens
-    eye.append(Space(d=axial_length, label="Vitreous Humor"))  # Increased distance from lens to retina
-    eye.append(Aperture(diameter=5.0, label="Retina Aperture"))  # Retina aperture for final imaging
+    eye.append(Space(object_distance,label="Space before the lens")) 
+    eye.append(Lens(f=myopic_focal_length, label="Effective Cornea and Lens (Myopic)"))  
+    eye.append(Space(d=axial_length, label="Vitreous Humor"))  
+    eye.append(Aperture(diameter=5.0, label="Retina Aperture")) 
 
     # Define object rays for a distant object (parallel rays to represent distant light sources)
     rays = ObjectRays(
-        diameter=2.0,    # Object's diameter in cm
-        halfAngle=0.0,   # Parallel rays representing a far object
-        H=3,             # Number of point sources (ray fans)
-        T=3,             # Rays per point source
-        z=0  # Object position
+        diameter=10.0,   
+        halfAngle=0.0,  
+        H=3,             
+        T=3,          
+        z=0  
     )
 
     # Check where the image forms
